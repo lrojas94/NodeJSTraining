@@ -1,0 +1,22 @@
+{
+  "name": "node-training",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "lrojas94 <lrojas94@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "fontawesome#~4.5.0"
+  }
+}
