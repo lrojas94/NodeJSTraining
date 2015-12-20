@@ -42,12 +42,29 @@
 app.set('views','./path/to/views);
 app.set('view engine','ejs'); //ejs,handlebars,jade.
 ```
-
+* In order to render a view with some context, one can use the following:
+```js
+app.get('/',function(req,res){
+    //It is important to notice that index has no extension
+    //If a view engine is set, it will assume it on its own.
+    res.render('index',context);
+});
+```
 ### ROUTING:
 * You can use a **Router** in order to route routes.
 ```js
 //It is assume that express is initialized in the app variable.
 //example routing:
-var exampleRouter = app.Router();
+var bookRouter = express.Router();
+app.use('/Books',bookRouter);
+bookRouter.route('/')
+    .get(function(req,res){
+        res.send('Books routing response');
+    });
 ```
-* You can EXPORT modules. This is an important feature when using different files.
+
+* You can **export** modules. This is an important feature when using different files. To do so:
+```js
+module.exports = [exported var/function/object];
+```
+* When exporting, it is possible to export a function. The function must return what app.js (or the caller) is expecting though. So, if we're trying to create a module which is a router, the exported function **must** return a router itself.
