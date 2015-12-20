@@ -14,8 +14,8 @@ var nav = [
     }
 ];
 //Personal requires:
+var adminRouter = require('./src/routes/adminRoutes')();
 var bookRouter = require('./src/routes/bookRoutes')(nav);
-
 app.listen(port, function (error) {
     console.log('Running server on: ' + port);
 });
@@ -28,6 +28,7 @@ app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
 //Routers:
+app.use('/Admin', adminRouter);
 app.use('/Books', bookRouter);
 //Gets:
 app.get('/', function (request, response) {
