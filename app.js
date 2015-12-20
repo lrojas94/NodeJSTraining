@@ -11,13 +11,13 @@ app.use(express.static('public'));
 //Sets:
 app.set('views','src/views');
 //Set engine
-app.engine('.hbs',handlebars({extname:'.hbs'}));
-app.set('view engine','.hbs');
+//app.engine('.hbs',handlebars({extname:'.hbs'}));
+app.set('view engine','ejs');
 //Gets:
 app.get('/', function (request, response) {
     var context = {
         list : ['a','b'],
-        title : 'Handle title :B'
+        title : 'EJS title :B'
     };
     response.render('index',context);
 });
