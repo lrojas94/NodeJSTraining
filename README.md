@@ -16,7 +16,7 @@
     /
     //Listen  to a port (REALLY IMPORTANT)
     app.listen(port,function(err){
-        console.log('for some reason, we can't listen to that port T.T');
+        console.log('for some reason, we can\'t listen to that port T.T');
     });
 ```
 ### BOWER:
@@ -27,7 +27,7 @@
 * Directory config. looks like this: 
 ```javascript 
 {
-    "directory" : "public/libJS
+    "directory" : "public/libJS"
 }
 ```
 
