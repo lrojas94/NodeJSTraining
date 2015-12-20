@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var init = function(nav){
+var init = function(nav) {
     var books = [
         {
             'id': '978-0641723445',
@@ -60,6 +60,10 @@ var init = function(nav){
         });
 
     router.route('/:id')
+        .all(function(req,res,next) {
+            //Allows us to jump to actual request (GET/POST/PUT/DELETE)
+            next();
+        })
         .get(function(req,res) {
             var id = req.params.id;
             var context = {
@@ -69,8 +73,8 @@ var init = function(nav){
 
             res.render('books',context);
         });
-    
+
     return router;
-}
+};
 
 module.exports = init;

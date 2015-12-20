@@ -1,3 +1,5 @@
+# Building Web Applicatios with Node.JS and Express 4.0 (Pluralsight)
+## Notes
 ### BASIC:
 * Node has a package.json file in which you can tell it where to start and where you can find what dependencies it has.
 * Node is **NOT** a web development framework on its own. Node can do lots of things (desktop apps, mobile, etc.).
@@ -68,3 +70,5 @@ bookRouter.route('/')
 module.exports = [exported var/function/object];
 ```
 * When exporting, it is possible to export a function. The function must return what app.js (or the caller) is expecting though. So, if we're trying to create a module which is a router, the exported function **must** return a router itself.
+
+### Databases
