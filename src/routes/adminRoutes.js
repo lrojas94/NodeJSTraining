@@ -6,7 +6,7 @@ var init = function() {
 
     var books = [
         {
-            'id': '978-0641723445',
+            'id': '28187',
             'cat': ['book', 'hardcover'],
             'name': 'The Lightning Thief',
             'author': 'Rick Riordan',
@@ -18,7 +18,7 @@ var init = function() {
             'pages_i': 384
         },
         {
-            'id': '978-1423103349',
+            'id': '28186',
             'cat': ['book', 'paperback'],
             'name': 'The Sea of Monsters',
             'author': 'Rick Riordan',
@@ -30,7 +30,7 @@ var init = function() {
             'pages_i': 304
         },
         {
-            'id': '978-1857995879',
+            'id': '58302',
             'cat': ['book', 'paperback'],
             'name': 'Sophie\'s World : The Greek Philosophers',
             'author': 'Jostein Gaarder',
@@ -41,7 +41,7 @@ var init = function() {
             'pages_i': 64
         },
         {
-            'id': '978-1933988177',
+            'id': '22131010',
             'cat': ['book', 'paperback'],
             'name': 'Lucene in Action, Second Edition',
             'author': 'Michael McCandless',

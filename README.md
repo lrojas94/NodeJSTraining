@@ -110,3 +110,6 @@ router.use(function(req,res,next) {
     next();
 });
 ```
+
+### Code Structure
+- Controllers work the same way everything else does. It is pretty similar to using frameworks like CodeIgniter (PHP).

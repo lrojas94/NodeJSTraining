@@ -5,8 +5,8 @@ var router = express.Router();
 var url = 'mongodb://localhost:27017/libraryApp';
 
 var init = function(nav) {
-    console.log(require('../controllers/bookController'));
-    var bookController = require('../controllers/bookController')(null,nav);
+    var goodReadsService = require('../services/goodReads')();
+    var bookController = require('../controllers/bookController')(goodReadsService,nav);
     //This is how we redirect on the start :D
     router.use(bookController.middleware);
     router.route('/')

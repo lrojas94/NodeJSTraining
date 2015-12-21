@@ -32,12 +32,15 @@ var init = function(bookService,nav) {
             var id = new objectId(req.params.id);
 
             collection.findOne({_id : id},function(err,book) {
-                var context = {
-                    nav : nav,
-                    books : [book]
-                };
-                res.render('books',context);
-                db.close();
+                bookService.getBookById(book.id,function(err,result) {
+                    book.book = result;
+                    var context = {
+                        nav : nav,
+                        books : [book]
+                    };
+                    res.render('books',context);
+                    db.close();
+                });
             });
         });
 
