@@ -1,5 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var session = require('express-session');
+
 var app = express();
 var handlebars = require('express-handlebars');
 var port = process.env.PORT || 5000;
@@ -14,10 +18,13 @@ var nav = [
         title: 'Authors'
     }
 ];
-//Static files:
+//Use:
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
+app.use(cookieParser());
+app.use(session({secret : 'library', resave: true, saveUninitialized: true}));
+require('./src/config/passport')(app);
 //Personal requires:
 var adminRouter = require('./src/routes/adminRoutes')();
 var bookRouter = require('./src/routes/bookRoutes')(nav);

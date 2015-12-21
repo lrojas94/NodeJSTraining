@@ -98,3 +98,15 @@ router.route('/example')
     var body = req.body; //this is a JSON file.
 });
 ```
+
+- Important about passport: to redirect on **failure** password must receive a result as **false**. Sending an error does **not** redirect to the route defined as failureRedirect. So, on done function, it is necessary to either send **done(err,false)** or **done(err,undefined)**.
+- Something that works for all defined routes is to tell the router to use a certain `function(req,res,next)`. This is really useful when dealing with Authentication. Basically, you can look for a user and, if not defined, redirect to homepage. Example:
+
+```js
+router.use(function(req,res,next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+    next();
+});
+```

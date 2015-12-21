@@ -103,12 +103,17 @@
             <br>
             <div class="col-md-2 col-sm-3 text-center">
                 Sign In
+                <form name='signInForm' class='form' action="/auth/signIn" method='post'>
+                    Username: <input type='text' name='username'/>
+                    Password: <input type='password' name='password'/>
+                    <input type='submit' class='btn btn-success' value='Sign Up'>
+                </form>
             </div>
             <div class="col-md-10 col-sm-9">
                 Sign Up
                 <form name='signUpForm' class='form' action="/auth/signUp" method='post'>
-                    <input type='text' name='username'/>
-                    <input type='password' name='password'/>
+                    Username: <input type='text' name='username'/>
+                    Password: <input type='password' name='password'/>
                     <input type='submit' class='btn btn-success' value='Sign Up'>
                 </form>
             </div>

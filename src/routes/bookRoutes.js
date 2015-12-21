@@ -5,6 +5,13 @@ var router = express.Router();
 var url = 'mongodb://localhost:27017/libraryApp';
 
 var init = function(nav) {
+    //This is how we redirect on the start :D
+    router.use(function(req,res,next) {
+        if (!req.user) {
+            res.redirect('/');
+        }
+        next();
+    });
     router.route('/')
         .get(function (req, res) {
             mongodb.connect(url,function(err,db) {
